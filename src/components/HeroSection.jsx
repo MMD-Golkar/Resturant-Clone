@@ -1,7 +1,7 @@
 export function HeroSection() {
   return (
     <section
-      className="w-screen bg-cover bg-top bg-no-repeat absolute top-22 md:top-20 z-10"
+      className="w-full bg-cover bg-top bg-no-repeat absolute top-22 md:top-20 z-10"
       style={{ backgroundImage: "url('/hero-bg.png')" }}
     >
       <div className="flex flex-col md:flex-row">
