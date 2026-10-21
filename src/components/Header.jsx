@@ -6,7 +6,7 @@ export function Header() {
 
   return (
     <>
-      <header className="w-full bg-amber-950 sticky top-0 md:text-white">
+      <header className="w-full bg-amber-950 sticky top-0 md:text-white z-99">
         <div className="ml-auto mr-auto flex justify-between  items-center h-22 md:h-20 ">
           <button
             className="ml-5"
@@ -28,7 +28,7 @@ export function Header() {
             <button className="cursor-pointer">Team</button>
           </div>
 
-          <div className=" ml-[38%] mr-auto flex justify-center pr-1 md:ml-0 md:mr-0">
+          <div className=" ml-[37%] mr-auto flex justify-center pr-1 md:ml-0 md:mr-0">
             <img src="../src/assets/images/logo.png" className="w-11 md:w-10" />
           </div>
 

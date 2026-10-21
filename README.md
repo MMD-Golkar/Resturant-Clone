@@ -1,19 +1,13 @@
-# React + Vite
+# روز اول: پیشرفت امروز
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+پیشرفت امروز شامل طراحی و پیاده‌سازی یک هدر واکنش‌گرا (Responsive Header) و سایدبار (Sidebar) بود. همچنین، پس‌زمینه‌ی بخش اصلی صفحه (Hero Section) طراحی شد و جزئیات بصری بیشتری به آن اضافه شد تا ظاهر جذاب‌تری داشته باشد.
 
-Currently, two official plugins are available:
+در نهایت، فونت‌های گوگل (Google Fonts) برای متن‌های داخل بخش Hero اضافه شدند تا خوانایی و زیبایی متن‌ها بهبود پیدا کند.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
+### خلاصه‌ی کارهای انجام‌شده
+- پیاده‌سازی هدر واکنش‌گرا برای نمایش مناسب در اندازه‌های مختلف صفحه‌نمایش.
+- طراحی و اضافه کردن سایدبار به رابط کاربری.
+- طراحی پس‌زمینه‌ی بخش Hero و اضافه کردن جزئیات بصری به آن.
+- استفاده از Google Fonts برای بهبود ظاهر و خوانایی متن‌های بخش Hero.
 
 https://demo.seothemesexpert.com/coffee-tea-pro/
