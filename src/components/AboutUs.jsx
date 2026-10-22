@@ -1,8 +1,11 @@
 import { ArrowRight } from "../assets/icons";
 export function AboutUs() {
   return (
-    <section className="flex flex-col md:flex-row mt-10 md:mt-137 w-full lg:mt-200 lg:justify-around mb-15">
-      <div className="flex w-[90%] lg:max-h-100  lg:mt-15 lg:mr-auto  mt-35 md:ml-5 md:w-80 lg:flex-1 md:mr-20 mb:10 relative h-80 min-[600px]:top-10 min-[700px]:top-30">
+    <section
+      className="flex flex-col md:flex-row mt-10 md:mt-137 w-full lg:mt-190 lg:justify-around  bg-cover bg-top bg-no-repeat"
+      style={{ backgroundImage: "url('/menu-bg.png')" }}
+    >
+      <div className="flex w-[90%] lg:max-h-100 lg:mt-25 min-[1200px]:mb-30 lg:mr-auto mt-35 md:ml-5 md:w-80 lg:flex-1 md:mr-20 mb:10 relative h-80 min-[600px]:top-10 min-[700px]:top-30">
         <img
           src="../src/assets/images/coffee.png"
           className=" top-59 w-[20%] min-[1150px]:mt-15 xl:mt-35 min-[1500px]:ml-50 max-w-30 absolute lg:top-5 min-[720px]:left-20 md:left-0 md:-top-2 z-10 ml-5 animate-[bounce_4s_infinite] ease-in-out"
@@ -21,7 +24,7 @@ export function AboutUs() {
         />
         <img
           src="../src/assets/images/map.png"
-          className="z-10 absolute -right-5 xl:left-120 lg:right-0 min-[1500px]:ml-50 md:-top-35 max-w-30 animate-[bounce_4s_infinite] ease-in-out w-[22%] rounded-lg "
+          className="z-10 absolute -right-5 xl:left-120 lg:-top-25 lg:right-0 min-[1500px]:ml-50 md:-top-35 max-w-30 animate-[bounce_4s_infinite] ease-in-out w-[22%] rounded-lg "
         />
       </div>
       <div className="mt-10 lg:w-148 xl:w-190 md:mt-10 md:w-100 md:pl-10 min-[1700px]:mr-50 flex flex-col lg:items-start items-center justify-center w-full min-[550px]:mt-30 min-[699px]:mt-50">
@@ -30,7 +33,9 @@ export function AboutUs() {
           <p className="lg:text-2xl xl:text-3xl">ABOUT US</p>
           <span className="w-18 border lg:w-28 border-yellow-900"></span>
         </div>
-        <h4 className="font-['Fredericka_the_Great'] text-2xl mt-3 lg:text-4xl text-[#634832] mb-3 xl:text-5xl">One Of The Best Coffee Service</h4>
+        <h4 className="font-['Fredericka_the_Great'] text-2xl mt-3 lg:text-4xl text-[#634832] mb-3 xl:text-5xl">
+          One Of The Best Coffee Service
+        </h4>
         <p className="text-gray-600 text-sm w-[80%] text-center mb-6 lg:text-lg lg:text-start ">
           We serve more than just coffee — we create little moments of warmth
           and happiness. ☕ From your first sip to your last, every cup is made
