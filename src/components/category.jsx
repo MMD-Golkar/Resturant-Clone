@@ -1,6 +1,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Categories } from "../lists";
+import { PromoBlocksvg } from "../assets/icons";
 
 // this is the code i wrote before using Ai
 /*export function Category() {
@@ -43,7 +44,7 @@ export function Category() {
 
   return (
     <section>
-      <div className="flex flex-col items-center z-10 mb-30">
+      <div className="flex flex-col items-center z-10 mb-10">
         <span className="w-37 mb-1 border border-amber-900 mt-15"></span>
         <h4 className="tracking-widest">OFFERED MENUS</h4>
         <span className="w-37 mt-1 border border-amber-900"></span>
@@ -81,6 +82,49 @@ export function Category() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row w-full lg:w-[90%] lg:justify-center lg:ml-auto lg:mr-auto items-center gap-5 pt-5 pb-5">
+        <div
+          className=" w-[95%] lg:w-full max-w-175  h-75 rounded-3xl bg-cover bg-center bg-no-repeat flex flex-col items-start pl-10 pt-5"
+          style={{ backgroundImage: "url('/promo-block1.png')" }}
+        >
+          <PromoBlocksvg />
+          <div className="-mt-27 mb-20 flex flex-col items-center -rotate-30 ml-5 ">
+            <p className="tracking-wider">ONLY</p>
+            <div className="flex gap-1">
+              <p className="text-4xl">$</p>
+              <p className="text-4xl text-[#634832]">1.50</p>
+            </div>
+          </div>
+          <span className="w-33 border border-b-0"></span>
+          <p className="tracking-widest text-sm">50% OFFER GOING</p>
+          <span className="w-33 border border-b-0 mb-2"></span>
+          <p className="font-semibold text-[#292E36] text-xl">Turkish Coffee</p>
+          <p className="text-[#555555]">
+            Your favorite coffee, now at half the price!
+          </p>
+        </div>
+        <div
+          className=" w-[95%] lg:w-full max-w-175  h-75 rounded-3xl bg-cover bg-center bg-no-repeat flex flex-col items-start pl-10 pt-5"
+          style={{ backgroundImage: "url('/promo-block2.png')" }}
+        >
+          <PromoBlocksvg />
+          <div className="-mt-27 mb-20 flex flex-col items-center -rotate-30 ml-5 ">
+            <p className="tracking-wider">ONLY</p>
+            <div className="flex gap-1">
+              <p className="text-4xl">$</p>
+              <p className="text-4xl text-[#634832]">2.50</p>
+            </div>
+          </div>
+          <span className="w-33 border border-b-0"></span>
+          <p className="tracking-widest text-sm">50% OFFER GOING</p>
+          <span className="w-33 border border-b-0 mb-2"></span>
+          <p className="font-semibold text-[#292E36] text-xl">Irish Coffee</p>
+          <p className="text-[#555555]">
+            Your favorite coffee, now at half the price!
+          </p>
         </div>
       </div>
     </section>

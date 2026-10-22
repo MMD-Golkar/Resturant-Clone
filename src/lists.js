@@ -60,7 +60,7 @@ export const Categories = [
     },
      {
         id: 4 ,
-        categoryname: "Sizza",
+        categoryname: "Pizza",
         url: "../src/assets/categories/pizza.png", 
         theme : "bg-yellow-300"
     },
@@ -74,7 +74,7 @@ export const Categories = [
         id: 6 ,
         categoryname: "Sushi",
         url: "../src/assets/categories/sushi.png", 
-        theme : "bg-[#967259]"
+        theme : "bg-fuchsia-300"
     },{
         id: 7 ,
         categoryname: "Burger",
@@ -95,7 +95,7 @@ export const Categories = [
     },
      {
         id: 10 ,
-        categoryname: "Sizza",
+        categoryname: "Pizza",
         url: "../src/assets/categories/pizza.png", 
         theme : "bg-yellow-300"
     },
