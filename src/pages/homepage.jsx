@@ -6,6 +6,7 @@ import {Category} from "../components/category"
 import { BestSeller } from "../components/BestSeller"
 import {Reservation} from "../components/Reservation"
 import {OfferMenu} from "../components/OfferMenu"
+import {WhyUs} from "../components/WhyUs"
 export default function Homepage() {
   return (
 
@@ -18,5 +19,6 @@ export default function Homepage() {
         <BestSeller />
         <Reservation />
         <OfferMenu />
+        <WhyUs />
     </>
 )}

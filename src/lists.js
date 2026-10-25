@@ -152,34 +152,34 @@ export const OfferMenuList = [
         price: "4.50" , 
         imgURL : "../src/assets/images/offer-menu1.png" ,
         name: "Espresso con panna" ,
-        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+        description : "shot of rich, bold espresso crowned with a cloud of freshly whipped cream"
     },
      {
         id:2 , 
         price: "2" , 
         imgURL : "../src/assets/images/offer-menu2.png" ,
         name: "Café Bombón" ,
-        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+        description : "Equal parts bold espresso and sweetened condensed milk, served in a small glass"
     },
      {
         id:3 , 
         price: "3.50" , 
         imgURL : "../src/assets/images/offer-menu3.png" ,
         name: "Espresso Romano" ,
-        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+        description : "A shot of bold espresso served with a twist of lemon peel on the side"
     },
      {
         id:4 , 
         price: "3" , 
         imgURL : "../src/assets/images/offer-menu4.png" ,
         name: "Mead Coffee" ,
-        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+        description : "Bold coffee blended with a splash of golden mead"
     },
      {
         id:5 , 
         price: "2.50" , 
         imgURL : "../src/assets/images/offer-menu5.png" ,
         name: "Café de Olla" ,
-        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+        description : "Coffee simmered in a clay pot with cinnamon and piloncillo, the traditional unrefined Mexican cane sugar"
     },
 ]
