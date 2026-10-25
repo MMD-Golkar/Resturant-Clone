@@ -48,7 +48,7 @@ import Autoplay from "embla-carousel-autoplay";
   );
 }*/
 
-//this is my code + Ai written code for the slide effect
+//this is my code + Ai written code for the slide effect + edited styles and added code by me
 
 export function Menu() {
   const [emblaRef, emblaApi] = useEmblaCarousel(

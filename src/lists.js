@@ -112,3 +112,36 @@ export const Categories = [
         theme : "bg-[#967259]"
     },
 ]
+
+export const BestSelleritems = [
+    {
+        id:1 , 
+        imgURL: "../src/assets/images/best-seller1.png" ,
+        price: "3.50" ,
+        name: "Vienna coffee"
+    },
+    {
+        id:1 , 
+        imgURL: "../src/assets/images/best-seller2.png" ,
+        price: "2" ,
+        name: "Frappuccino coffee"
+    },
+    {
+        id:1 , 
+        imgURL: "../src/assets/images/best-seller3.png" ,
+        price: "1.50" ,
+        name: "ColdBrew coffee"
+    },
+    {
+        id:1 , 
+        imgURL: "../src/assets/images/best-seller4.png" ,
+        price: "2.50" ,
+        name: "Nitro Cold coffee"
+    },
+    {
+        id:1 , 
+        imgURL: "../src/assets/images/best-seller5.png" ,
+        price: "3" ,
+        name: "Cold coffee"
+    }
+]
