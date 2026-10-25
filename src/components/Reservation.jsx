@@ -4,7 +4,7 @@ export function Reservation() {
   return (
     <section className="bg-black pb-10">
       <div className="flex flex-col items-center pt-15 md:pt-55 text-white">
-        <span className="border mt-1 w-20 border-[#967259]"></span>
+        <span className="border mb-1 w-20 border-[#967259]"></span>
         <p className="text-md tracking-widest">RESERVATION</p>
         <span className="border mt-1 w-20 border-[#967259]"></span>
         <h4 className="text-2xl font-['Fredericka_the_Great'] text-gray-200 mt-3">

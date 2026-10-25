@@ -121,27 +121,65 @@ export const BestSelleritems = [
         name: "Vienna coffee"
     },
     {
-        id:1 , 
+        id:2 , 
         imgURL: "../src/assets/images/best-seller2.png" ,
         price: "2" ,
         name: "Frappuccino coffee"
     },
     {
-        id:1 , 
+        id:3 , 
         imgURL: "../src/assets/images/best-seller3.png" ,
         price: "1.50" ,
         name: "ColdBrew coffee"
     },
     {
-        id:1 , 
+        id:4 , 
         imgURL: "../src/assets/images/best-seller4.png" ,
         price: "2.50" ,
         name: "Nitro Cold coffee"
     },
     {
-        id:1 , 
+        id:5 , 
         imgURL: "../src/assets/images/best-seller5.png" ,
         price: "3" ,
         name: "Cold coffee"
     }
+]
+
+export const OfferMenuList = [
+    {
+        id:1 , 
+        price: "4.50" , 
+        imgURL : "../src/assets/images/offer-menu1.png" ,
+        name: "Espresso con panna" ,
+        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+    },
+     {
+        id:2 , 
+        price: "2" , 
+        imgURL : "../src/assets/images/offer-menu2.png" ,
+        name: "Café Bombón" ,
+        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+    },
+     {
+        id:3 , 
+        price: "3.50" , 
+        imgURL : "../src/assets/images/offer-menu3.png" ,
+        name: "Espresso Romano" ,
+        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+    },
+     {
+        id:4 , 
+        price: "3" , 
+        imgURL : "../src/assets/images/offer-menu4.png" ,
+        name: "Mead Coffee" ,
+        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+    },
+     {
+        id:5 , 
+        price: "2.50" , 
+        imgURL : "../src/assets/images/offer-menu5.png" ,
+        name: "Café de Olla" ,
+        description : "A shot of rich, bold espresso crowned with a cloud of freshly whipped cream."
+    },
 ]
