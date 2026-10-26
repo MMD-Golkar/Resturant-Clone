@@ -183,3 +183,30 @@ export const OfferMenuList = [
         description : "Coffee simmered in a clay pot with cinnamon and piloncillo, the traditional unrefined Mexican cane sugar"
     },
 ]
+
+export const WhyUsSliderList = [
+    {
+        id:1 ,
+        title: "Fresh Product" , 
+        description: "we roast our beans in small batches and bake our pastries daily, so every cup and every bite tastes as fresh as it should",
+        img: "../src/assets/images/service-icon1.png"
+    },
+    {
+        id:2 ,
+        title: "Skilled Chefs" , 
+        description: "Meet the hands behind every plate. Our chefs bring years of training and a real love of food to the Brewnora kitchen",
+        img: "../src/assets/images/service-icon2.png"
+    },
+    {
+        id:3 ,
+        title: "Drinks & Juices" , 
+        description: "Sip something special. From freshly brewed espresso and creamy lattes to refreshing cold brews",
+        img: "../src/assets/images/service-icon3.png"
+    },
+    {
+        id:4 ,
+        title: "Vegan Cuisine" , 
+        description: "Our vegan menu proves that food made without animal products can be every bit as satisfying",
+        img: "../src/assets/images/service-icon4.png"
+    },
+]
