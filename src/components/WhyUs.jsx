@@ -94,7 +94,7 @@ export function WhyUs() {
         </button>
       </div>
 
-      <div className="bg-[url('../src/assets/images/coffeebean.png')] bg-cover bg-center bg-no-repeat w-full h-110 mb-10">
+      <div className="bg-[url('../src/assets/images/coffeebean.png')] bg-cover bg-center bg-no-repeat w-full h-110">
   <div className="backdrop-blur-xs w-full h-full flex flex-col justify-center items-center">
     <Swiper
       modules={[Autoplay, Pagination]}
