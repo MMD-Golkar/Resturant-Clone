@@ -130,7 +130,7 @@ export function WhyUs() {
 
 export function WhyusSliderComponent({ title, description, img }) {
   return (
-    <div className="flex flex-col items-center justify-center text-white  w-110 md:w-100  lg:w-[90%] ml-auto mr-auto hover:border hover:border-black py-5 rounded-md hover:shadow-[0_5px_10px_3px_rgba(0,0,0,2)]">
+    <div className="flex flex-col items-center justify-center text-white  w-110 md:w-100  lg:w-[90%] ml-auto mr-auto border  border-transparent hover:border-black py-5 rounded-md hover:shadow-[0_5px_10px_3px_rgba(0,0,0,2)]">
       <img src={img} className="mb-5 size-25 bg-transparent" />
       <p className="font-semibold text-xl">{title}</p>
       <p className="text-sm mt-2 mb-3 text-center w-[90%]">{description}</p>

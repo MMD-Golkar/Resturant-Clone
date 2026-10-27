@@ -275,3 +275,27 @@ export const TeamRightMembersList = [
     role: "Chief Executive",
   },
 ];
+
+export const CustomerReviewsList = [
+  {
+    id: 1,
+    text: "The coffee at Brewnora is the best I've had in years. Rich, smooth, and always fresh. The staff remembers my order every morning!",
+    imgURL: "../src/assets/images/customerimage1.png",
+    name: "Jhon Yon",
+    role: "Customer",
+  },
+  {
+    id: 2,
+    text: "I came for the vegan menu and stayed for the atmosphere. Everything tastes fresh and homemade, and the fresh juices are amazing. A true hidden gem.",
+    imgURL: "../src/assets/images/customerimage2.png",
+    name: "Sara Lee",
+    role: "Customer",
+  },
+  {
+    id: 3,
+text: "Friendly team, cozy place, and delicious food. The chefs clearly care about every dish. It feels like home every time I visit.",
+    imgURL: "../src/assets/images/customerimage3.png",
+    name: "Ali Reza",
+    role: "Customer",
+  },
+];
