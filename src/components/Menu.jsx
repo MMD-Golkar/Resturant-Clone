@@ -2,6 +2,7 @@ import { MenuItemslist } from "../lists";
 import { Carticon } from "../assets/icons";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 
 //this is the code i write before using Ai code
 
@@ -93,29 +94,29 @@ export function Menu() {
         </div>
       </div>
 
-      <button className="bg-[#634832] text-white px-7 py-3 rounded-lg cursor-pointer shadow-[0px_7px_10px_0px_rgba(211,162,69,0.6)] mt-5 mb-10 ml-auto mr-auto flex">See More Menu</button>
+      <button className="bg-[#634832] text-white px-7 py-3 rounded-lg cursor-pointer shadow-[0px_7px_10px_0px_rgba(211,162,69,0.6)] mt-5 mb-10 ml-auto mr-auto flex">
+        See More Menu
+      </button>
     </section>
   );
 }
 
 export function MenuItem({ name, description, url, price }) {
   return (
-    <div className="hover:bg-[#967259] flex flex-col items-center mt-5 justify-end bg-white  rounded-tl-4xl rounded-tr-md rounded-br-4xl rounded-bl-md w-full h-65 mb-20">
-      <div className="flex justify-center ml-15">
-        <img
-          src={url}
-          draggable="false"
-          className="w-55 mb-9 rounded-full"
-        />
-        <p className="bg-black h-12 w-12 justify-center rounded-full flex items-center text-white mt-13 ml-2">
-          ${price}
-        </p>
+    <ScrollAnimation direction="up">
+      <div className="hover:bg-[#967259] flex flex-col items-center mt-5 justify-end bg-white  rounded-tl-4xl rounded-tr-md rounded-br-4xl rounded-bl-md w-full h-65 mb-20">
+        <div className="flex justify-center ml-15">
+          <img src={url} draggable="false" className="w-55 mb-9 rounded-full" />
+          <p className="bg-black h-12 w-12 justify-center rounded-full flex items-center text-white mt-13 ml-2">
+            ${price}
+          </p>
+        </div>
+        <p className="font-semibold">{name}</p>
+        <p className="text-center w-[80%] mb-5">{description}</p>
+        <button className="bg-[#634832] p-3 text-white rounded-full -mb-5 cursor-pointer">
+          <Carticon />
+        </button>
       </div>
-      <p className="font-semibold">{name}</p>
-      <p className="text-center w-[80%] mb-5">{description}</p>
-      <button className="bg-[#634832] p-3 text-white rounded-full -mb-5 cursor-pointer">
-        <Carticon />
-      </button>
-    </div>
+    </ScrollAnimation>
   );
 }

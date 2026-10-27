@@ -329,3 +329,30 @@ export const BlogList = [
       "Water temperature, grind size and timing make all the difference. Our baristas share the tips they use every day.",
   },
 ];
+
+export const ContactInfo = [
+  { id: "email", type: "email", value: "hello@brewnora.example" },
+  { id: "phone", type: "phone", value: "+1 555 010 4872" },
+  {
+    id: "location",
+    type: "location",
+    value: "128 Maple Orchard Rd, Pinewood Falls, Oregon 97000",
+  },
+];
+
+export const OpeningHours = [
+  { id: 1, days: "Mon-Fri", time: "07:00 am - 08:00 pm" },
+  { id: 2, days: "Sat", time: "08:00 am - 09:00 pm" },
+  { id: 3, days: "Sunday", time: "08:00 am - 06:00 pm" },
+];
+
+export const QuickLinks = [
+  { id: 1, label: "Contact Us", href: "#contact" },
+  { id: 2, label: "Reserve a Table", href: "#booking" },
+  { id: 3, label: "Gallery", href: "#gallery" },
+  { id: 4, label: "Our Services", href: "#services" },
+  { id: 5, label: "Our Menu", href: "#menu" },
+  { id: 6, label: "Meet the Team", href: "#team" },
+];
+
+// export const Sponsors = [{ id: 1, name: "Sponsor 1", imgURL: sponsor1 }];

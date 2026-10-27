@@ -2,7 +2,8 @@ import { BestSelleritems } from "../lists";
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import {ChevronLeft , ChevronRight} from "../assets/icons"
+import { ChevronLeft, ChevronRight } from "../assets/icons";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 
 //this is the code i wrote before using Ai
 
@@ -100,19 +101,19 @@ export function BestSeller() {
         </div>
 
         <button
-            onClick={scrollPrev}
-            aria-label="Previous item"
-            className="hidden absolute w-10 h-10 md:flex justify-center items-center pr-1 rounded-full bg-[#634832] text-white cursor-pointer hover:bg-[#967259]"
-          >
-            <ChevronLeft />
-          </button>
-          <button
-            onClick={scrollNext}
-            aria-label="Next item"
-            className="hidden absolute right-0 w-10 h-10 md:flex justify-center items-center  rounded-full bg-[#634832] text-white cursor-pointer hover:bg-[#967259]"
-          >
-            <ChevronRight />
-          </button>
+          onClick={scrollPrev}
+          aria-label="Previous item"
+          className="hidden absolute w-10 h-10 md:flex justify-center items-center pr-1 rounded-full bg-[#634832] text-white cursor-pointer hover:bg-[#967259]"
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          onClick={scrollNext}
+          aria-label="Next item"
+          className="hidden absolute right-0 w-10 h-10 md:flex justify-center items-center  rounded-full bg-[#634832] text-white cursor-pointer hover:bg-[#967259]"
+        >
+          <ChevronRight />
+        </button>
 
         <div className="flex ml-auto mr-auto gap-1 md:hidden mb-5">
           <button
@@ -137,19 +138,21 @@ export function BestSeller() {
 
 export function BestSellerItems({ imgURL, price, name }) {
   return (
-    <div className="relative hover:text-white md:bg-white hover:[&_p]:bg-[#634832] cursor-pointer hover:bg-[#967259] md:hover:bg-white  mb-5 rounded-br-4xl rounded-tl-4xl rounded-tr-lg rounded-bl-lg h-70 md:h-90 mt-30 md:mt-10 md:w-64 md:rounded-3xl w-[85%] ml-auto mr-auto flex items-end justify-center">
-      <div className="flex pl-5 md:pl-0">
-        <img src={imgURL} className="max-h-100 relative md:max-h-90" />
-        
-        <p className="mt-10 ml-2 w-12 flex items-center justify-center rounded-full h-12 md:absolute md:right-3 md:bg-white md:-top-7 md:hover:text-white">
-          ${price}
-        </p>
+    <ScrollAnimation direction="up">
+      <div className="relative hover:text-white md:bg-white hover:[&_p]:bg-[#634832] cursor-pointer hover:bg-[#967259] md:hover:bg-white  mb-5 rounded-br-4xl rounded-tl-4xl rounded-tr-lg rounded-bl-lg h-70 md:h-90 mt-30 md:mt-10 md:w-64 md:rounded-3xl w-[85%] ml-auto mr-auto flex items-end justify-center">
+        <div className="flex pl-5 md:pl-0">
+          <img src={imgURL} className="max-h-100 relative md:max-h-90" />
+
+          <p className="mt-10 ml-2 w-12 flex items-center justify-center rounded-full h-12 md:absolute md:right-3 md:bg-white md:-top-7 md:hover:text-white">
+            ${price}
+          </p>
+        </div>
+        <div className="absolute text-white items-center gap-0.5 flex flex-col bottom-10 ">
+          <span className="border-white w-20 border border-b-0"></span>
+          <h6>{name}</h6>
+          <span className="bg-white w-20 border border-b-0"></span>
+        </div>
       </div>
-      <div className="absolute text-white items-center gap-0.5 flex flex-col bottom-10 ">
-        <span className="border-white w-20 border border-b-0"></span>
-        <h6>{name}</h6>
-        <span className="bg-white w-20 border border-b-0"></span>
-      </div>
-    </div>
+    </ScrollAnimation>
   );
 }

@@ -41,3 +41,7 @@
 
 
 https://demo.seothemesexpert.com/coffee-tea-pro/
+
+
+import { ScrollAnimation } from "../components/ScrollAnimation";
+<ScrollAnimation direction="left"></ScrollAnimation>

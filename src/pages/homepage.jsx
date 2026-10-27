@@ -10,7 +10,7 @@ import {WhyUs} from "../components/WhyUs"
 import {MeetOurTeam} from "../components/MeetOurTeam"
 import {HappyCustomers} from "../components/HappyCustomers"
 import {Ourblog} from "../components/Ourblog"
-
+import {Footer} from "../components/Footer"
 
 
 export default function Homepage() {
@@ -29,5 +29,6 @@ export default function Homepage() {
         <MeetOurTeam />
         <HappyCustomers />
         <Ourblog />
+        <Footer />
     </>
 )}
