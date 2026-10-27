@@ -9,6 +9,10 @@ import {OfferMenu} from "../components/OfferMenu"
 import {WhyUs} from "../components/WhyUs"
 import {MeetOurTeam} from "../components/MeetOurTeam"
 import {HappyCustomers} from "../components/HappyCustomers"
+import {Ourblog} from "../components/Ourblog"
+
+
+
 export default function Homepage() {
   return (
 
@@ -24,5 +28,6 @@ export default function Homepage() {
         <WhyUs />
         <MeetOurTeam />
         <HappyCustomers />
+        <Ourblog />
     </>
 )}

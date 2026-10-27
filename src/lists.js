@@ -293,9 +293,39 @@ export const CustomerReviewsList = [
   },
   {
     id: 3,
-text: "Friendly team, cozy place, and delicious food. The chefs clearly care about every dish. It feels like home every time I visit.",
+    text: "Friendly team, cozy place, and delicious food. The chefs clearly care about every dish. It feels like home every time I visit.",
     imgURL: "../src/assets/images/customerimage3.png",
     name: "Ali Reza",
     role: "Customer",
+  },
+];
+
+export const BlogList = [
+  {
+    id: 1,
+    imgURL: "../src/assets/images/blog1.png",
+    title: "5 Cozy Coffee Pairings You Need to Try This Fall",
+    date: "2025-09-15",
+    comments: 12,
+    description:
+      "From cinnamon rolls to maple pecan scones, discover the pastries that bring out the best in our autumn latte lineup.",
+  },
+  {
+    id: 2,
+    imgURL: "../src/assets/images/blog2.png",
+    title: "Behind the Beans: The Story of Our Signature Roast",
+    date: "2025-09-22",
+    comments: 8,
+    description:
+      "We trace our house blend from a small family farm in Colombia to your cup, and share how we roast it every morning.",
+  },
+  {
+    id: 3,
+    imgURL: "../src/assets/images/blog3.png",
+    title: "Brewing the Perfect Cup: Secrets from Our Baristas",
+    date: "2025-09-29",
+    comments: 21,
+    description:
+      "Water temperature, grind size and timing make all the difference. Our baristas share the tips they use every day.",
   },
 ];
