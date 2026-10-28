@@ -6,7 +6,7 @@ export function Sidebar({ mobileMenuStatus , setMobileMenuStatus}) {
   const [shopDropDownStatus, setShopDropDownStatus] = useState(false);
   return (
     <aside
-      className={`md:hidden top-22 z-99 [&_button]:cursor-pointer rounded-br-md flex flex-col w-70 sticky left-0 items-start pl-10 pt-5 transition-transform duration-600 ease-in-out bg-yellow-800 text-white h-200 ${mobileMenuStatus ? "translate-x-0" : "-translate-x-full"}`}
+      className={`md:hidden max-[767px]: top-22 z-99 [&_button]:cursor-pointer rounded-br-md flex flex-col w-70 sticky left-0 items-start pl-10 pt-5 transition-transform duration-600 ease-in-out bg-yellow-800 text-white h-200 ${mobileMenuStatus ? "translate-x-0" : "-translate-x-full"}`}
       inert={!mobileMenuStatus}
     >
       <button className="bg-red-500 p-0.5 right-5 rounded-sm ml-auto mr-5" onClick={()=> setMobileMenuStatus(false)}><XMark /></button>  

@@ -43,5 +43,5 @@
 https://demo.seothemesexpert.com/coffee-tea-pro/
 
 
-import { ScrollAnimation } from "../components/ScrollAnimation";
-<ScrollAnimation direction="left"></ScrollAnimation>
+### what i have learned :
+ scroll animation effect + typing text animation + made my tailwind skills more solid + working on a real world like project

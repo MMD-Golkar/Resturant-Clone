@@ -1,6 +1,12 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ScrollAnimation } from "../components/ScrollAnimation";
 import { TypingText } from "../components/TypingText";
-export function HeroSection() {
+import { handleSearch } from "../utils";
+
+export function HeroSection({ user, setUser }) {
+  const navigate = useNavigate();
+  const [searcheditem, setSearchedItem] = useState("");
   return (
     <section
       className="w-full bg-cover bg-top bg-no-repeat absolute top-22 md:top-20 z-10"
@@ -24,16 +30,26 @@ export function HeroSection() {
               Brewnora is a cozy corner for handcrafted coffee, fresh pastries,
               and warm moments, where every cup is made with care.
             </p>
-            <div className="relative flex w-full">
+            <form
+              className="relative flex w-full"
+              onSubmit={(e) =>
+                handleSearch(e, searcheditem, user, setUser, navigate)
+              }
+            >
               <input
                 type="text"
                 className="bg-white md:pr-20 md:ml-0 md:mr-0 text-black xl:pr-50 xl:ml-5 lg:pr-40 lg:ml-5 placeholder:text-black border rounded-lg px-4 pr-20 py-3 w-[90%] ml-auto mr-auto"
                 placeholder="Search Products..."
+                value={searcheditem}
+                onChange={(e) => setSearchedItem(e.target.value)}
               />
-              <button className="mt-5 absolute right-7 rounded-lg -top-3.5 p-2 cursor-pointer lg:right-6 text-black min-[860px]:right-11 min-[950px]:right-12 xl:right-8 xl:px-5 bg-yellow-700 min-[600px]:right-9 min-[700px]:right-10">
+              <button
+                className="mt-5 absolute right-7 rounded-lg -top-3.5 p-2 cursor-pointer lg:right-6 text-black min-[860px]:right-11 min-[950px]:right-12 xl:right-8 xl:px-5 bg-yellow-700 min-[600px]:right-9 min-[700px]:right-10"
+                type="submit"
+              >
                 Search
               </button>
-            </div>
+            </form>
           </ScrollAnimation>
         </div>
 

@@ -295,7 +295,7 @@ export const CustomerReviewsList = [
     id: 3,
     text: "Friendly team, cozy place, and delicious food. The chefs clearly care about every dish. It feels like home every time I visit.",
     imgURL: "../src/assets/images/customerimage3.png",
-    name: "Ali Reza",
+    name: "Elisa brat",
     role: "Customer",
   },
 ];
@@ -356,3 +356,76 @@ export const QuickLinks = [
 ];
 
 // export const Sponsors = [{ id: 1, name: "Sponsor 1", imgURL: sponsor1 }];
+
+const baseURL = "../../../src/assets/products";
+
+export const ProductsList = [
+  // ---------- Asian ----------
+  { id: "a7f3c1d2", image: `${baseURL}/Chicken-Pad-Thai.jpg`, name: "Chicken Pad Thai", price: 13.5, salePrice: 11.99, rating: 5, category: "asian" },
+  { id: "b2e94a6f", image: `${baseURL}/Sushi-Combo-Platter.jpg`, name: "Sushi Combo Platter", price: 18.99, salePrice: null, rating: 5, category: "asian" },
+  { id: "c91d5e08", image: `${baseURL}/Tonkotsu-Ramen.jpg`, name: "Tonkotsu Ramen", price: 14, salePrice: null, rating: 5, category: "asian" },
+  { id: "d4a07b3e", image: `${baseURL}/Kung-Pao-Chicken.jpg`, name: "Kung Pao Chicken", price: 12.99, salePrice: 10.99, rating: 4, category: "asian" },
+  { id: "e58c2f91", image: `${baseURL}/Korean-Bibimbap.webp`, name: "Korean Bibimbap", price: 13.99, salePrice: null, rating: 4, category: "asian" },
+
+  // ---------- Bakery ----------
+  { id: "f1b6d7a4", image: `${baseURL}/Butter-Croissant.jpg`, name: "Butter Croissant", price: 3.5, salePrice: null, rating: 5, category: "bakery" },
+  { id: "0a3e8c52", image: `${baseURL}/Blueberry-Muffin.jpg`, name: "Blueberry Muffin", price: 3.25, salePrice: 2.75, rating: 4, category: "bakery" },
+  { id: "1d7f4b69", image: `${baseURL}/Cinnamon-Roll.webp`, name: "Cinnamon Roll", price: 4.25, salePrice: null, rating: 5, category: "bakery" },
+  { id: "2c85a0e7", image: `${baseURL}/Chocolate-Chip-Cookie.jpg`, name: "Chocolate Chip Cookie", price: 2.5, salePrice: null, rating: 4, category: "bakery" },
+  { id: "3e9b1d84", image: `${baseURL}/NewYork-Cheesecake-Slice.jpg`, name: "New York Cheesecake Slice", price: 6.5, salePrice: 5.5, rating: 5, category: "bakery" },
+
+  // ---------- Burger ----------
+  { id: "4f2a6c13", image: `${baseURL}/Classic-Cheeseburger.jpg`, name: "Classic Cheeseburger", price: 9.99, salePrice: null, rating: 5, category: "burger" },
+  { id: "5b8d3e70", image: `${baseURL}/Bacon-Double-Cheeseburger.jfif`, name: "Bacon Double Cheeseburger", price: 12.49, salePrice: 10.99, rating: 5, category: "burger" },
+  { id: "6a1c9f25", image: `${baseURL}/Crispy-Chicken-Burger.webp`, name: "Crispy Chicken Burger", price: 10.49, salePrice: null, rating: 4, category: "burger" },
+  { id: "7d4e2b96", image: `${baseURL}/Mushroom-Swiss-Burger.jfif`, name: "Mushroom Swiss Burger", price: 11.49, salePrice: null, rating: 4, category: "burger" },
+  { id: "8c0f7a38", image: `${baseURL}/Spicy-Jalapeno-Burger.jfif`, name: "Spicy Jalapeño Burger", price: 10.99, salePrice: 9.49, rating: 4, category: "burger" },
+
+  // ---------- Drink ----------
+  { id: "9e5b1c4d", image: `${baseURL}/Korean-Dalgona-Coffee.jfif`, name: "Korean Dalgona Coffee", price: 5.5, salePrice: 4.75, rating: 5, category: "drink" },
+  { id: "a3d8f062", image: `${baseURL}/Classic-ColdBrew-Coffee.jpg`, name: "Classic Cold Brew Coffee", price: 4.5, salePrice: null, rating: 5, category: "drink" },
+  { id: "b6c2e9a1", image: `${baseURL}/Iced-Caramel-Macchiato.jfif`, name: "Iced Caramel Macchiato", price: 5.25, salePrice: null, rating: 5, category: "drink" },
+  { id: "c07a4d3f", image: `${baseURL}/Mango-Lassi.jfif`, name: "Mango Lassi", price: 4.25, salePrice: null, rating: 4, category: "drink" },
+  { id: "d9f1b685", image: `${baseURL}/Fresh-Lemon-Mint-Cooler.jfif`, name: "Fresh Lemon Mint Cooler", price: 3.75, salePrice: 3.25, rating: 4, category: "drink" },
+
+  // ---------- Pizza ----------
+  { id: "e2b7c04a", image: `${baseURL}/Margherita-Pizza.jpg`, name: "Margherita Pizza", price: 11.99, salePrice: null, rating: 5, category: "pizza" },
+  { id: "f8a3d519", image: `${baseURL}/Pepperoni-Pizza.jpg`, name: "Pepperoni Pizza", price: 13.99, salePrice: 11.99, rating: 5, category: "pizza" },
+  { id: "01c6e8b7", image: `${baseURL}/Hawaiian-Pizza.jpg`, name: "Hawaiian Pizza", price: 13.49, salePrice: null, rating: 3, category: "pizza" },
+  { id: "12d9f3a6", image: `${baseURL}/BBQ-Chicken-Pizza.jpg`, name: "BBQ Chicken Pizza", price: 14.49, salePrice: null, rating: 4, category: "pizza" },
+  { id: "23e0a4c8", image: `${baseURL}/Four-Cheese-Pizza.cms`, name: "Four Cheese Pizza", price: 14.99, salePrice: null, rating: 5, category: "pizza" },
+  { id: "34f1b5d9", image: `${baseURL}/Meat-Lovers-Pizza.jfif`, name: "Meat Lovers Pizza", price: 15.99, salePrice: 13.99, rating: 5, category: "pizza" },
+  { id: "4502c6ea", image: `${baseURL}/Supreme-Pizza.jfif`, name: "Supreme Pizza", price: 15.49, salePrice: null, rating: 4, category: "pizza" },
+  { id: "5613d7fb", image: `${baseURL}/Buffalo-Chicken-Pizza.jpg`, name: "Buffalo Chicken Pizza", price: 14.49, salePrice: null, rating: 4, category: "pizza" },
+  { id: "6724e80c", image: `${baseURL}/Truffle-Mushroom-Pizza.jfif`, name: "Truffle Mushroom Pizza", price: 16.49, salePrice: null, rating: 4, category: "pizza" },
+  { id: "7835f91d", image: `${baseURL}/Neapolitan-Marinara-Pizza.jpg`, name: "Neapolitan Marinara Pizza", price: 10.99, salePrice: 9.49, rating: 3, category: "pizza" },
+
+  // ---------- Salad ----------
+  { id: "8946a02e", image: `${baseURL}/Chicken-Caesar-Salad.jpg`, name: "Chicken Caesar Salad", price: 9.5, salePrice: null, rating: 5, category: "salad" },
+  { id: "9a57b13f", image: `${baseURL}/Greek-Salad.webp`, name: "Greek Salad", price: 9.99, salePrice: null, rating: 4, category: "salad" },
+  { id: "ab68c240", image: `${baseURL}/Cobb-Salad.webp`, name: "Cobb Salad", price: 11.99, salePrice: 10.49, rating: 4, category: "salad" },
+  { id: "bc79d351", image: `${baseURL}/Caprese-Salad.jpg`, name: "Caprese Salad", price: 10.5, salePrice: null, rating: 4, category: "salad" },
+  { id: "cd8ae462", image: `${baseURL}/Sesame-Chicken-Salad.jpg`, name: "Sesame Chicken Salad", price: 11.5, salePrice: null, rating: 3, category: "salad" },
+
+  // ---------- Special menu ----------
+  { id: "de9bf573", image: `${baseURL}/Chef's-Wagyu-Steak.jpeg`, name: "Chef's Wagyu Steak", price: 39.99, salePrice: null, rating: 5, category: "special-menu" },
+  { id: "efacb684", image: `${baseURL}/Lobster-Mac-and-Cheese.jpg`, name: "Lobster Mac & Cheese", price: 24.99, salePrice: 21.99, rating: 5, category: "special-menu" },
+  { id: "f0bdc795", image: `${baseURL}/Truffle-Mushroom-Risotto.jpg`, name: "Truffle Mushroom Risotto", price: 21.99, salePrice: null, rating: 4, category: "special-menu" },
+  { id: "01cee8a6", image: `${baseURL}/Grilled-Salmon-with-Lemon-Butter.jpg`, name: "Grilled Salmon with Lemon Butter", price: 22.99, salePrice: null, rating: 5, category: "special-menu" },
+  { id: "12dff9b7", image: `${baseURL}/Herb-Crusted-Rack-of-Lamb.jfif`, name: "Herb-Crusted Rack of Lamb", price: 34.99, salePrice: 31.99, rating: 5, category: "special-menu" },
+
+  // ---------- Veggie ----------
+  { id: "2300a0c8", image: `${baseURL}/Falafel-Wrap.jpg`, name: "Falafel Wrap", price: 8.99, salePrice: null, rating: 4, category: "veggie" },
+  { id: "3411b1d9", image: `${baseURL}/Veggie-Buddha-Bowl.jpg`, name: "Veggie Buddha Bowl", price: 11.99, salePrice: 9.99, rating: 4, category: "veggie" },
+  { id: "4522c2ea", image: `${baseURL}/Paneer-Tikka.jpg`, name: "Paneer Tikka", price: 12.49, salePrice: null, rating: 5, category: "veggie" },
+  { id: "5633d3fb", image: `${baseURL}/Stuffed-Bell-Peppers.jfif`, name: "Stuffed Bell Peppers", price: 10.99, salePrice: null, rating: 3, category: "veggie" },
+  { id: "6744e40c", image: `${baseURL}/BlackBean-Burger.jpg`, name: "Black Bean Burger", price: 10.49, salePrice: null, rating: 4, category: "veggie" },
+];
+
+export const RecentPosts = [
+  { id: 1, title: "Why Our Coffee Shop Is Your New Favorite Work Spot", href: "#" },
+  { id: 2, title: "Cold Brew vs Iced Coffee: What's the Real Difference?", href: "#" },
+  { id: 3, title: "A Day in the Life of a Coffee Shop Owner", href: "#" },
+  { id: 4, title: "Espresso Yourself: Creative Latte Art You'll Love", href: "#" },
+  { id: 5, title: "Morning Rituals: Why Coffee is More Than Just a Drink", href: "#" },
+];
