@@ -45,3 +45,7 @@ https://demo.seothemesexpert.com/coffee-tea-pro/
 
 ### what i have learned :
  scroll animation effect + typing text animation + made my tailwind skills more solid + working on a real world like project
+
+
+added better style to the sidebar 
+added cart icon in header

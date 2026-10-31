@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import Shop from "./pages/shoppage";
+import { Cart } from "../src/pages/cartpage";
 export default function App() {
   const location = useLocation();
 
@@ -29,14 +30,9 @@ export default function App() {
   }, [user.searchfor]);
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<Homepage user={user} setUser={setUser} />}
-      ></Route>
-      <Route
-        path="/shop"
-        element={<Shop user={user} setUser={setUser} />}
-      ></Route>
+      <Route path="/" element={<Homepage user={user} setUser={setUser} />} />
+      <Route path="/shop" element={<Shop user={user} setUser={setUser} />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { HamburgerMenu, DropdownArrow } from "../assets/icons";
+import { BsCart2 } from "react-icons/bs";
 import { Sidebar } from "./Sidebar";
+import { useCart } from "../components/shop/CartContext";
+
 export function Header() {
   const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
+  const { pathname } = useLocation();
+  const { totalItems } = useCart();
 
+  const isHome = pathname === "/";
+  const isShop = pathname.startsWith("/shop");
   return (
     <>
       <header className="w-full bg-amber-950 sticky top-0 md:text-white z-99">
@@ -29,7 +37,10 @@ export function Header() {
           </div>
 
           <div className=" ml-[37%] mr-auto flex justify-center pr-1 md:ml-0 md:mr-0">
-            <img src="../src/assets/images/logo.png" className="w-11 md:w-10" />
+            <img
+              src="../src/assets/images/logo.png"
+              className="w-9 mt-0.5 md:w-10"
+            />
           </div>
 
           <div className="hidden md:flex gap-2 lg:gap-5 ml-5 lg:ml-15 lg:-mr-20 xl:gap-8">
@@ -43,16 +54,33 @@ export function Header() {
             <button className="cursor-pointer mr-1">Reviews</button>
             <div className="relative group w-fit">
               <button className="flex items-center cursor-pointer">
-              Shop
-              <DropdownArrow />
-            </button>
-            <ShopDropDown />
+                Shop
+                <DropdownArrow />
+              </button>
+              <ShopDropDown />
             </div>
             <button className="cursor-pointer">Account</button>
           </div>
-          <button className="hidden md:flex bg-yellow-700 mr-5 text-white p-2 rounded-md cursor-pointer">
-            Buy Now
-          </button>
+          {isHome ? (
+            <Link
+              className="hidden md:flex bg-yellow-700 mr-5 text-white p-2 rounded-md cursor-pointer"
+              to="/shop"
+            >
+              Buy Now
+            </Link>
+          ) : isShop ? (
+            <Link
+              to="/cart"
+              className="p-3 border border-white rounded-xl mt-1 mr-5 relative"
+            >
+              {totalItems > 0 && (
+                <span className="absolute -top-2 bg-amber-500 w-6 h-6 flex items-center justify-center rounded-full -right-2 text-amber-950">
+                  {totalItems}
+                </span>
+              )}
+              <BsCart2 className="text-white size-6" />
+            </Link>
+          ) : null}
         </div>
       </header>
 
