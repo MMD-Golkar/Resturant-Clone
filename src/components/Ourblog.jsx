@@ -65,7 +65,7 @@ export function Ourblog() {
   };
 
   return (
-    <section>
+    <section id="blog" className="scroll-mt-24">
       <div className="flex flex-col items-center mt-10 mb-5">
         <span className="border mt-1 w-24 border-[#634832]"></span>
         <p className="text-md tracking-widest">LATEST NEWS</p>

@@ -1,10 +1,10 @@
 export const handleSearch = (e, searcheditem, user, setUser, navigate) => {
   e.preventDefault();
-  if (!searcheditem.trim()) return;
+  const query = searcheditem.trim();
 
   setUser((prevUser) => ({
     ...prevUser,
-    searchfor: searcheditem.trim(),
+    searchfor: query,
   }));
-  if (searcheditem !== "") navigate("/shop");
+  navigate("/shop");
 };

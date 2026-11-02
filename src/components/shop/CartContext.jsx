@@ -3,14 +3,13 @@ import { createContext, useContext, useEffect, useMemo, useReducer } from "react
 const CartContext = createContext(null);
 const STORAGE_KEY = "brewnora-cart";
 
-// 1) The reducer: every way the cart can change lives here, in one place.
 function cartReducer(items, action) {
   switch (action.type) {
     case "ADD": {
       const { id, name, image, price } = action.product;
       const existing = items.find((item) => item.id === id);
 
-      // Already in the cart? Just bump the quantity.
+
       if (existing) {
         return items.map((item) =>
           item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
@@ -38,7 +37,7 @@ function cartReducer(items, action) {
   }
 }
 
-// 2) Load the saved cart once, when the app starts.
+
 function loadCart() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -48,11 +47,11 @@ function loadCart() {
   }
 }
 
-// 3) The provider: wrap your app with this once.
+
 export function CartProvider({ children }) {
   const [items, dispatch] = useReducer(cartReducer, [], loadCart);
 
-  // Save to localStorage every time the cart changes.
+ 
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
@@ -78,7 +77,6 @@ export function CartProvider({ children }) {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
-// 4) The hook: any component calls this to read or change the cart.
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) {

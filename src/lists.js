@@ -349,7 +349,7 @@ export const OpeningHours = [
 export const QuickLinks = [
   { id: 1, label: "Contact Us", href: "#contact" },
   { id: 2, label: "Reserve a Table", href: "#booking" },
-  { id: 3, label: "Gallery", href: "#gallery" },
+  { id: 3, label: "Best Sellers", href: "#best-sellers" },
   { id: 4, label: "Our Services", href: "#services" },
   { id: 5, label: "Our Menu", href: "#menu" },
   { id: 6, label: "Meet the Team", href: "#team" },
@@ -423,9 +423,9 @@ export const ProductsList = [
 ];
 
 export const RecentPosts = [
-  { id: 1, title: "Why Our Coffee Shop Is Your New Favorite Work Spot", href: "#" },
-  { id: 2, title: "Cold Brew vs Iced Coffee: What's the Real Difference?", href: "#" },
-  { id: 3, title: "A Day in the Life of a Coffee Shop Owner", href: "#" },
-  { id: 4, title: "Espresso Yourself: Creative Latte Art You'll Love", href: "#" },
-  { id: 5, title: "Morning Rituals: Why Coffee is More Than Just a Drink", href: "#" },
+  { id: 1, title: "Why Our Coffee Shop Is Your New Favorite Work Spot", href: "/#blog" },
+  { id: 2, title: "Cold Brew vs Iced Coffee: What's the Real Difference?", href: "/#blog" },
+  { id: 3, title: "A Day in the Life of a Coffee Shop Owner", href: "/#blog" },
+  { id: 4, title: "Espresso Yourself: Creative Latte Art You'll Love", href: "/#blog" },
+  { id: 5, title: "Morning Rituals: Why Coffee is More Than Just a Drink", href: "/#blog" },
 ];

@@ -9,6 +9,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { ContactInfo, OpeningHours, QuickLinks } from "../lists";
+import { Link } from "react-router-dom";
 
 // icons stay in the component, the data stays in lists.js
 const ContactIcons = {
@@ -40,7 +41,7 @@ function FooterHeading({ children }) {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#0b0d0f] text-white">
+    <footer id="contact" className="relative scroll-mt-24 overflow-hidden bg-[#0b0d0f] text-white">
       {/* big brown circle behind the left column (lg and up only) */}
       <div className="hidden lg:block absolute top-24 -left-48 size-144 rounded-full bg-[#967259] xl:-left-56 xl:size-168" />
 
@@ -98,7 +99,7 @@ export function Footer() {
             {QuickLinks.map((link) => (
               <li key={link.id}>
                 <a
-                  href={link.href}
+                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
                   className="flex items-center justify-between hover:text-[#dcbfae] transition-colors"
                 >
                   {link.label}
@@ -107,12 +108,12 @@ export function Footer() {
               </li>
             ))}
             <li className="flex items-center justify-between">
-              <a
-                href="#"
+              <Link
+                to="/shop"
                 className="rounded-lg bg-[#dcbfae] px-3 py-1.5 text-black hover:bg-[#c9a893] transition-colors"
               >
                 Buy Now
-              </a>
+              </Link>
               <FaChevronRight className="hidden md:block text-xs text-gray-300" />
             </li>
           </ul>
@@ -157,14 +158,14 @@ export function Footer() {
         {/* SOCIALS */}
         <div className="flex gap-6 md:col-start-2 md:row-start-3 md:self-end md:border-t md:border-white/20 md:pt-6 md:w-full lg:col-start-2 lg:col-span-3 lg:row-start-2 lg:justify-end lg:border-0 lg:pt-0 lg:self-end">
           {Socials.map(({ id, Icon }) => (
-            <a
+            <span
               key={id}
-              href="#"
               aria-label={id}
-              className="hover:text-[#dcbfae] transition-colors"
+              title={`${id} profile coming soon`}
+              className="text-white/70"
             >
               <Icon />
-            </a>
+            </span>
           ))}
         </div>
       </div>

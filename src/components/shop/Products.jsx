@@ -17,7 +17,7 @@ export function Products({ products, onClear }) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 md:gap-6 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 md:gap-6 xl:grid-cols-4">
           {products.map((product) => (
             <ProductComponent
               key={product.id}
@@ -119,7 +119,7 @@ export function ProductComponent({
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-white text-center">
+    <div className="relative flex w-full flex-col justify-between overflow-hidden bg-white text-center">
       {salePrice && (
         <span className="absolute left-0 top-0 z-10 bg-[#654832] px-3 py-4 text-xs font-bold text-white">
           SALE!
@@ -147,11 +147,11 @@ export function ProductComponent({
       </div>
 
       <div className="px-2 pb-4">
-        <h3 className="mt-2 text-lg font-semibold leading-tight text-black">
+        <h3 className="mt-2 text-sm font-semibold leading-tight text-black sm:text-lg">
           {name}
         </h3>
         <div
-          className="mt-1 text-base text-[#654832]"
+          className="mt-1 text-sm text-[#654832] sm:text-base"
           aria-label={`${rating} out of 5 stars`}
         >
           {"★".repeat(rating)}
@@ -170,12 +170,12 @@ export function ProductComponent({
         {quantity === 0 ? (
           <button
             onClick={handleAdd}
-            className="mt-3 rounded-xl cursor-pointer bg-[#654832] px-7 py-4 text-sm font-semibold text-white shadow-[0px_7px_10px_0px_rgba(211,162,69,0.6)] transition duration-200 hover:-translate-y-1 hover:bg-[#503824] active:translate-y-0"
+            className="mt-3 w-full cursor-pointer rounded-lg bg-[#654832] px-2 py-3 text-xs font-semibold text-white shadow-[0px_4px_8px_0px_rgba(211,162,69,0.35)] transition duration-200 hover:bg-[#503824] active:translate-y-0 sm:w-auto sm:rounded-xl sm:px-7 sm:py-4 sm:text-sm sm:hover:-translate-y-1"
           >
             Add to cart
           </button>
         ) : (
-          <div className="mt-3 inline-flex h-[52px] items-center overflow-hidden rounded-xl border border-[#654832]/30 bg-white">
+          <div className="mt-3 inline-flex h-13 items-center overflow-hidden rounded-xl border border-[#654832]/30 bg-white">
             <button
               onClick={() => updateQuantity(id, quantity - 1)}
               aria-label={`Decrease quantity of ${name}`}

@@ -1,8 +1,23 @@
 import { useState, useEffect } from "react";
 import {ChevronDoubleUp} from "../assets/icons"
+import { useLocation } from "react-router-dom";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  }, [pathname, hash]);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ProductsList, RecentPosts } from "../../lists";
 
 const counts = {};
@@ -33,21 +32,19 @@ export function ProductsSidebar({
   activeCategory,
   onCategoryChange,
 }) {
-  const [value, setValue] = useState(query);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(value);
+    onSearch(query);
   };
 
   return (
-    <aside className="flex w-full shrink-0 flex-col gap-8 md:w-64 lg:w-72">
+    <aside className="flex w-full shrink-0 flex-col gap-5 md:w-64 lg:w-72 md:gap-8">
       <SidebarCard title="Search eateries" titleClassName="hidden md:block">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
+            value={query}
+            onChange={(e) => onSearch(e.target.value)}
             placeholder="Search products..."
             className="h-11 w-full border border-black px-3 text-sm outline-none"
           />
@@ -63,8 +60,15 @@ export function ProductsSidebar({
       <SidebarCard title="Products">
         <ul className="flex flex-col gap-5">
           {featuredProducts.map((product) => (
-            <li key={product.id} className="flex items-start justify-between gap-3">
-              <div>
+            <li key={product.id}>
+              <button
+                type="button"
+                onClick={() => {
+                  onSearch(product.name);
+                }}
+                className="flex w-full cursor-pointer items-start justify-between gap-3 text-left"
+              >
+                <div>
                 <h5 className="text-sm font-semibold leading-snug text-gray-800">
                   {product.name}
                 </h5>
@@ -85,12 +89,13 @@ export function ProductsSidebar({
                     <span>${product.price}</span>
                   )}
                 </div>
-              </div>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-12.5 w-12.5 shrink-0 object-cover"
-              />
+                </div>
+                <img
+                  src={product.image}
+                  alt=""
+                  className="h-12.5 w-12.5 shrink-0 object-cover"
+                />
+              </button>
             </li>
           ))}
         </ul>

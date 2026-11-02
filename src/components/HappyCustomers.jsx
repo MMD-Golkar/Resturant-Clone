@@ -7,6 +7,7 @@ export function HappyCustomers() {
   const [dragging, setDragging] = useState(false);
   const startX = useRef(0);
   const total = CustomerReviewsList.length;
+  const [reviewSent, setReviewSent] = useState(false);
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % total), [total]);
 
@@ -42,7 +43,7 @@ export function HappyCustomers() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row">
+    <section id="reviews" className="flex flex-col md:flex-row scroll-mt-24">
       {/* LEFT: header block */}
       <div className="bg-[#967259] md:w-1/2 md:flex md:items-center md:justify-center">
         <div className="flex flex-col items-center pb-15 text-black w-[90%] ml-auto mr-auto pt-15 md:pb-0 md:pt-0">
@@ -104,19 +105,31 @@ export function HappyCustomers() {
         {/* newsletter */}
         <div className="flex flex-col bg-amber-950 w-full h-40 text-white justify-center items-center">
           <p className="mb-4">NEWS LETTER</p>
-          <div className="flex flex-row items-center gap-3">
+          <form
+            className="flex w-[90%] flex-row items-center gap-3"
+            onSubmit={(event) => {
+              event.preventDefault();
+              setReviewSent(true);
+              event.currentTarget.reset();
+            }}
+          >
             <input
-              type="text"
-              className="bg-white w-[70%] md:w-67 lg:w-100 xl:w-130 placeholder:text-gray-500 py-2 px-5 rounded-lg text-black"
-              placeholder="Your Review..."
+              type="email"
+              name="email"
+              required
+              aria-label="Email address for newsletter"
+              className="bg-white min-w-0 flex-1 md:w-67 lg:w-100 xl:w-130 placeholder:text-gray-500 py-2 px-5 rounded-lg text-black"
+              placeholder="Your email..."
             />
-            <button className="bg-[#634832] mt-0.5 px-4 py-2 rounded-md cursor-pointer">
-              SEND
+            <button type="submit" className="bg-[#634832] mt-0.5 px-4 py-2 rounded-md cursor-pointer">
+              JOIN
             </button>
-          </div>
-          <p className="mt-5 hidden bg-green-600 px-3 py-1 rounded-lg">
-            Message sent. thank you for your feedback
-          </p>
+          </form>
+          {reviewSent && (
+            <p role="status" className="mt-3 rounded-lg bg-green-700 px-3 py-1 text-sm">
+              Thanks! Newsletter signup is in preview mode.
+            </p>
+          )}
         </div>
       </div>
     </section>

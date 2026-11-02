@@ -3,8 +3,8 @@ export function TopHeader({user}) {
  
   return (
     <section
-      style={{ backgroundImage: "url('../shop-header.png')" }}
-      className="h-70 w-full sm:pr-7 md:pr-25 bg-cover bg-top max-[767px]:-mt-200 bg-no-repeat text-white flex flex-col justify-center items-center text-center"
+      style={{ backgroundImage: "url('/shop-header.png')" }}
+      className="flex min-h-56 w-full items-center justify-center bg-cover bg-center bg-no-repeat px-5 py-10 text-center text-white sm:min-h-64 md:h-70 md:px-10"
     >
       <ScrollAnimation direction="left">
         <h1 className="font-['Fredericka_the_Great'] text-3xl mb-5 md:text-4xl lg:text-5xl xl:text-6xl">Archives: Shop</h1>
@@ -32,6 +32,10 @@ const PAGE_CONTENT = {
     title: "Your Cart",
     subtitle: "Review your items before you check out.",
   },
+  "/checkout": {
+    title: "Checkout",
+    subtitle: "Enter your details to complete this demo order.",
+  },
 };
 
 export function TopHeader({ user }) {
@@ -49,7 +53,7 @@ export function TopHeader({ user }) {
   return (
     <section
       style={{ backgroundImage: "url('../shop-header.png')" }}
-      className="h-70 w-full sm:pr-7 md:pr-25 bg-cover bg-top max-[767px]:-mt-200 bg-no-repeat text-white flex flex-col justify-center items-center text-center"
+      className="flex min-h-56 w-full items-center justify-center bg-cover bg-center bg-no-repeat px-5 py-10 text-center text-white sm:min-h-64 md:h-70 md:px-10"
     >
       <ScrollAnimation direction="left">
         <h1 className="font-['Fredericka_the_Great'] text-3xl mb-5 md:text-4xl lg:text-5xl xl:text-6xl">

@@ -123,7 +123,9 @@ export function CartPage() {
               </span>
             </div>
 
-            <button className={brownButton}>Checkout</button>
+            <Link to="/checkout" className={brownButton}>
+              Checkout
+            </Link>
 
             <Link
               to="/shop"

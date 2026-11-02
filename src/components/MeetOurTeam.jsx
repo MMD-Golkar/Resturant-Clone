@@ -3,8 +3,8 @@ import { ScrollAnimation } from "../components/ScrollAnimation";
 
 export function MeetOurTeam() {
   return (
-    <section className="pt-5 flex flex-col md:flex-row">
-      <div className="flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-3 sm:w-[80%] sm:ml-auto sm:mr-auto md:grid md:grid-rows-4 md:grid-cols-1 md:h-115 md:">
+    <section id="team" className="scroll-mt-24 flex flex-col pt-5 md:flex-row md:items-center md:justify-center md:gap-4">
+      <div className="mx-auto flex w-[90%] flex-col sm:grid sm:w-[80%] sm:grid-cols-3 sm:grid-rows-2 md:mx-0 md:w-1/4 md:grid-cols-2 md:grid-rows-2">
         {TeamLeftMembersList.map((person) => (
           <TeamMember
             key={person.id}
@@ -15,7 +15,7 @@ export function MeetOurTeam() {
         ))}
       </div>
 
-      <div className="bg-[url('../src/assets/images/teammiddleimage.png')] sm:w-[80%] md:h-115 md:w-135 lg:w-350 xl:w-600 w-[99%] ml-auto mr-auto rounded-3xl bg-cover bg-center bg-no-repeat h-60 mb-5 md:flex-col">
+      <div className="mx-auto mb-5 h-60 w-[95%] rounded-3xl bg-[url('../src/assets/images/teammiddleimage.png')] bg-cover bg-center bg-no-repeat sm:w-[80%] md:mx-0 md:min-h-96 md:h-auto md:w-1/2 md:max-w-2xl">
         <ScrollAnimation direction="up">
           <div className="flex flex-col items-center pb-10 text-black w-[90%] ml-auto mr-auto pt-10">
             <span className="border  w-18 border-black lg:w-23"></span>
@@ -34,7 +34,7 @@ export function MeetOurTeam() {
         </ScrollAnimation>
       </div>
 
-      <div className="flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-3 sm:w-[80%] sm:ml-auto sm:mr-auto md:grid md:grid-rows-4 md:grid-cols-1 md:h-115">
+      <div className="mx-auto flex w-[90%] flex-col sm:grid sm:w-[80%] sm:grid-cols-3 sm:grid-rows-2 md:mx-0 md:w-1/4 md:grid-cols-2 md:grid-rows-2">
         {TeamRightMembersList.map((person) => (
           <TeamMember
             key={person.id}
@@ -50,15 +50,15 @@ export function MeetOurTeam() {
 
 export function TeamMember({ imgURL, name, role }) {
   return (
-    <div className="group relative hover:[&_h6]:text-[#634832] overflow-hidden rounded-xl flex flex-col items-center md:mr-auto md:ml-auto py-3 gap-2 md:flex-row">
+    <div className="group relative flex flex-col items-center gap-2 overflow-hidden rounded-xl py-3 hover:[&_h6]:text-[#634832] md:mx-auto md:min-w-0 lg:flex-row">
       {/* shine layer */}
       <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/50 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[400%]" />
       
-      <div>
-        <img src={imgURL} className="rounded-full" />
+      <div className="shrink-0">
+        <img src={imgURL} alt={name} className="h-12 w-12 shrink-0 rounded-full object-cover lg:h-16 lg:w-16" />
       </div>
-      <div className="text-center">
-        <h6 className="font-semibold mb-1 text-md w-30">{name}</h6>
+      <div className="w-full min-w-0 text-center">
+        <h6 className="mb-1 w-full text-sm font-semibold lg:text-base">{name}</h6>
         <p className="text-gray-500 text-sm">{role}</p>
       </div>
     </div>

@@ -7,13 +7,14 @@ import { WhyUsSliderList } from "../lists";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { ScrollAnimation } from "../components/ScrollAnimation";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export function WhyUs() {
   return (
     <ScrollAnimation direction="fade">
-      <section>
+      <section id="services" className="scroll-mt-24">
         <div className="w-[90%] xl:w-[80%] ml-auto mr-auto flex md:flex-row flex-col items-center pb-10 pt-10">
           <img
             src="../src/assets/images/why-choose1.png"
@@ -42,23 +43,23 @@ export function WhyUs() {
               in with a book.
             </p>
 
-            <div className="hidden lg:grid md:mt-5  pb-10 flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:w-[90%] sm:ml-auto sm:mr-auto [&_svg]:text-[#634832] [&_button]:flex [&_button]:flex-col [&_button]:items-center [&_button]:border-l-5 [&_button]:w-[90%] [&_button]:ml-auto [&_button]:mr-auto [&_button]:py-7 [&_button]:gap-1 gap-7 [&_button]:hover:bg-[#967259] [&_button]:rounded-tr-lg [&_button]:rounded-br-lg [&_button]:border-[#634832] [&_button:hover_svg]:text-white [&_button:hover_p]:text-white [&_button]:duration-500 ease-in-out">
-              <button>
+            <div className="hidden lg:grid md:mt-5 pb-10 flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:w-[90%] sm:ml-auto sm:mr-auto [&_svg]:text-[#634832] [&_a]:flex [&_a]:flex-col [&_a]:items-center [&_a]:border-l-5 [&_a]:w-[90%] [&_a]:ml-auto [&_a]:mr-auto [&_a]:py-7 [&_a]:gap-1 gap-7 [&_a]:hover:bg-[#967259] [&_a]:rounded-tr-lg [&_a]:rounded-br-lg [&_a]:border-[#634832] [&_a:hover_svg]:text-white [&_a:hover_p]:text-white [&_a]:duration-500 ease-in-out">
+              <Link to="/shop">
                 <FaTruck className=" size-8" />
                 <p className="font-semibold">Fast Delivery</p>
-              </button>
-              <button>
+              </Link>
+              <Link to="/shop">
                 <FaHeadphones className=" size-8" />
                 <p className="font-semibold">24/7 Services</p>
-              </button>
-              <button>
+              </Link>
+              <Link to="/shop">
                 <FaBirthdayCake className=" size-8" />
                 <p className="font-semibold">Fresh Food</p>
-              </button>
-              <button>
+              </Link>
+              <Link to="/shop">
                 <FaHandshake className=" size-8" />
                 <p className="font-semibold">Quality Maintain</p>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -77,23 +78,23 @@ export function WhyUs() {
           </p>
         </div>
 
-        <div className="md:hidden flex pb-10 flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:w-[80%] sm:ml-auto sm:mr-auto [&_svg]:text-[#634832] [&_button]:flex [&_button]:flex-col [&_button]:items-center [&_button]:border-l-5 [&_button]:w-[90%] [&_button]:ml-auto [&_button]:mr-auto [&_button]:py-7 [&_button]:gap-1 gap-7 [&_button]:hover:bg-[#967259] [&_button]:rounded-tr-lg [&_button]:rounded-br-lg [&_button]:border-[#634832] [&_button:hover_svg]:text-white [&_button:hover_p]:text-white [&_button]:duration-500 ease-in-out">
-          <button>
+        <div className="md:hidden flex pb-10 flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:w-[80%] sm:ml-auto sm:mr-auto [&_svg]:text-[#634832] [&_a]:flex [&_a]:flex-col [&_a]:items-center [&_a]:border-l-5 [&_a]:w-[90%] [&_a]:ml-auto [&_a]:mr-auto [&_a]:py-7 [&_a]:gap-1 gap-7 [&_a]:hover:bg-[#967259] [&_a]:rounded-tr-lg [&_a]:rounded-br-lg [&_a]:border-[#634832] [&_a:hover_svg]:text-white [&_a:hover_p]:text-white [&_a]:duration-500 ease-in-out">
+          <Link to="/shop">
             <FaTruck className=" size-8" />
             <p className="font-semibold">Fast Delivery</p>
-          </button>
-          <button>
+          </Link>
+          <Link to="/shop">
             <FaHeadphones className=" size-8" />
             <p className="font-semibold">24/7 Services</p>
-          </button>
-          <button>
+          </Link>
+          <Link to="/shop">
             <FaBirthdayCake className=" size-8" />
             <p className="font-semibold">Fresh Food</p>
-          </button>
-          <button>
+          </Link>
+          <Link to="/shop">
             <FaHandshake className=" size-8" />
             <p className="font-semibold">Quality Maintain</p>
-          </button>
+          </Link>
         </div>
 
         <div className="bg-[url('../src/assets/images/coffeebean.png')] bg-cover bg-center bg-no-repeat w-full h-110">
@@ -138,13 +139,13 @@ export function WhyUs() {
 export function WhyusSliderComponent({ title, description, img }) {
   return (
     <ScrollAnimation direction="right">
-      <div className="flex flex-col items-center justify-center text-white  w-110 md:w-100  lg:w-[90%] ml-auto mr-auto border  border-transparent hover:border-black py-5 rounded-md hover:shadow-[0_5px_10px_3px_rgba(0,0,0,2)]">
+      <div className="mx-auto flex w-full max-w-sm flex-col items-center justify-center rounded-md border border-transparent py-5 text-white hover:border-black hover:shadow-[0_5px_10px_3px_rgba(0,0,0,2)] md:max-w-full">
         <img src={img} className="mb-5 size-25 bg-transparent" />
         <p className="font-semibold text-xl">{title}</p>
         <p className="text-sm mt-2 mb-3 text-center w-[90%]">{description}</p>
-        <button className="cursor-pointer px-4 py-1 rounded-lg hover:text-white hover:bg-amber-900">
+        <Link to="/shop" className="cursor-pointer px-4 py-1 rounded-lg hover:text-white hover:bg-amber-900">
           See More
-        </button>
+        </Link>
       </div>
     </ScrollAnimation>
   );

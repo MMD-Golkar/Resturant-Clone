@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "../assets/icons";
 import { ScrollAnimation } from "../components/ScrollAnimation";
+import { useCart } from "./shop/CartContext";
 
 //this is the code i wrote before using Ai
 
@@ -72,7 +73,7 @@ export function BestSeller() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section className="relative  md:h-75 ">
+    <section id="best-sellers" className="relative scroll-mt-24 md:h-75 ">
       <div className="flex flex-col items-center mt-15">
         <span className="border mt-1 w-31 border-amber-900"></span>
         <p className="text-md tracking-widest">PEOPLE'S CHOICE</p>
@@ -91,6 +92,7 @@ export function BestSeller() {
                 className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] xl:flex-[0_0_25%] min-w-0 "
               >
                 <BestSellerItems
+                  id={item.id}
                   imgURL={item.imgURL}
                   price={item.price}
                   name={item.name}
@@ -136,7 +138,9 @@ export function BestSeller() {
   );
 }
 
-export function BestSellerItems({ imgURL, price, name }) {
+export function BestSellerItems({ id, imgURL, price, name }) {
+  const { addItem } = useCart();
+
   return (
     <ScrollAnimation direction="up">
       <div className="relative hover:text-white md:bg-white hover:[&_p]:bg-[#634832] cursor-pointer hover:bg-[#967259] md:hover:bg-white  mb-5 rounded-br-4xl rounded-tl-4xl rounded-tr-lg rounded-bl-lg h-70 md:h-90 mt-30 md:mt-10 md:w-64 md:rounded-3xl w-[85%] ml-auto mr-auto flex items-end justify-center">
@@ -151,6 +155,20 @@ export function BestSellerItems({ imgURL, price, name }) {
           <span className="border-white w-20 border border-b-0"></span>
           <h6>{name}</h6>
           <span className="bg-white w-20 border border-b-0"></span>
+          <button
+            type="button"
+            onClick={() =>
+              addItem({
+                id: `best-seller-${id}`,
+                name,
+                image: imgURL,
+                price: Number(price),
+              })
+            }
+            className="mt-2 rounded-lg bg-[#634832] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#503824]"
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </ScrollAnimation>

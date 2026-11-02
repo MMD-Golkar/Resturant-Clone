@@ -21,7 +21,7 @@ export default function Homepage({user , setUser}) {
       <HeroSection user={user} setUser={setUser}/>
       <AboutUs />
       <Menu />
-      <Category />
+      <Category setUser={setUser} />
       <BestSeller />
       <Reservation />
       <OfferMenu />

@@ -7,66 +7,65 @@ import { handleSearch } from "../utils";
 export function HeroSection({ user, setUser }) {
   const navigate = useNavigate();
   const [searcheditem, setSearchedItem] = useState("");
+
   return (
     <section
-      className="w-full bg-cover bg-top bg-no-repeat absolute top-22 md:top-20 z-10"
+      className="relative isolate w-full overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/hero-bg.png')" }}
     >
-      <div className="flex flex-col md:flex-row">
-        <div className="flex flex-col items-center mt-10 z-50 md:mt-25 lg:max-w-100 xl:max-w-150 xl:mt-20 lg:mt-50 lg:ml-10 w-[90%] ml-auto mr-auto text-white md:w-200 md:items-start md:ml-10 xl:w-120 xl:ml-10">
-          <ScrollAnimation direction="up">
-            <p className="italic mb-10 font-[Arizonia] text-2xl mt-20 xl:ml-35">
-              <TypingText text="Welcome to Brewnora" speed={100}></TypingText>
+      <div className="mx-auto grid min-h-[calc(100svh-5rem)] w-full max-w-7xl items-center gap-8 px-5 py-10 text-white sm:px-8 md:grid-cols-2 md:gap-6 lg:px-12 lg:py-16">
+        <ScrollAnimation direction="up">
+          <div className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
+            <p className="mb-5 mt-2 font-[Arizonia] text-2xl italic sm:text-3xl">
+              <TypingText text="Welcome to Brewnora" speed={100} />
             </p>
-
-            <h1 className="mb-5 text-5xl flex text-center md:text-start xl:text-center font-['Fredericka_the_Great']">
-              <TypingText
-                text="We Have Dialysis Coffee"
-                speed={200}
-              ></TypingText>
+            <h1 className="mb-5 max-w-2xl font-['Fredericka_the_Great'] text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              <TypingText text="We Have Dialysis Coffee" speed={200} />
             </h1>
-
-            <p className="w-[90%] flex text-center text-sm mb-5 text-gray-300">
+            <p className="mb-7 max-w-lg text-sm leading-6 text-gray-200 sm:text-base">
               Brewnora is a cozy corner for handcrafted coffee, fresh pastries,
               and warm moments, where every cup is made with care.
             </p>
             <form
-              className="relative flex w-full"
-              onSubmit={(e) =>
-                handleSearch(e, searcheditem, user, setUser, navigate)
+              className="relative w-full max-w-lg"
+              onSubmit={(event) =>
+                handleSearch(event, searcheditem, user, setUser, navigate)
               }
             >
               <input
-                type="text"
-                className="bg-white md:pr-20 md:ml-0 md:mr-0 text-black xl:pr-50 xl:ml-5 lg:pr-40 lg:ml-5 placeholder:text-black border rounded-lg px-4 pr-20 py-3 w-[90%] ml-auto mr-auto"
-                placeholder="Search Products..."
+                type="search"
+                className="h-12 w-full rounded-lg border border-white/30 bg-white py-3 pl-4 pr-25 text-sm text-black outline-none placeholder:text-gray-500 focus:ring-2 focus:ring-amber-500"
+                placeholder="Search products..."
                 value={searcheditem}
-                onChange={(e) => setSearchedItem(e.target.value)}
+                onChange={(event) => setSearchedItem(event.target.value)}
               />
               <button
-                className="mt-5 absolute right-7 rounded-lg -top-3.5 p-2 cursor-pointer lg:right-6 text-black min-[860px]:right-11 min-[950px]:right-12 xl:right-8 xl:px-5 bg-yellow-700 min-[600px]:right-9 min-[700px]:right-10"
+                className="absolute right-1.5 top-1.5 bottom-1.5 rounded-md bg-yellow-700 px-4 text-sm font-semibold text-white transition hover:bg-yellow-600"
                 type="submit"
               >
                 Search
               </button>
             </form>
-          </ScrollAnimation>
-        </div>
-
-        <div className="flex flex-col">
-          <div className="flex">
-            <img
-              src="../src/assets/images/moving-dotts.png"
-              className="animate-[bounce_6s_infinite] ease-in-out z-5 w-50 h-30 absolute -ml-20 hidden md:inline lg:-ml-130 xl:-ml-70"
-            />
-            <img
-              src="../src/assets/images/ellipse-image.png"
-              className=" top-0 right-0 hidden md:inline lg:absolute z-10"
-            />
           </div>
+        </ScrollAnimation>
+
+        <div className="relative mx-auto flex w-full max-w-xl items-center justify-center md:max-w-none">
           <img
-            src="../src/assets/images/main-banner-image.png"
-            className=" w-[90%] mt-5 ml-auto mr-auto md:w-80 md:ml-auto md:-mt-5 mb-20 z-50 lg:w-130 lg:mt-60 lg:mr-20 xl:mt-30 xl:mr-50 xl:w-170"
+            src="/src/assets/images/ellipse-image.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute right-0 top-0 hidden w-3/4 max-w-lg md:block"
+          />
+          <img
+            src="/src/assets/images/moving-dotts.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute -left-2 top-1/4 hidden w-28 md:block lg:w-40"
+          />
+          <img
+            src="/src/assets/images/main-banner-image.png"
+            alt="Freshly made latte served at Brewnora"
+            className="relative z-10 w-full max-w-sm object-contain sm:max-w-md md:max-w-full lg:max-w-2xl"
           />
         </div>
       </div>

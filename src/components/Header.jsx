@@ -1,86 +1,132 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HamburgerMenu, DropdownArrow } from "../assets/icons";
 import { BsCart2 } from "react-icons/bs";
 import { Sidebar } from "./Sidebar";
 import { useCart } from "../components/shop/CartContext";
 
+const pageLinks = [
+  ["Welcome", "/"],
+  ["About Brewnora", "/about"],
+  ["The Menu", "/#menu"],
+  ["Our Roots", "/#about"],
+  ["Beans & Gear", "/shop"],
+  ["Bean Stories", "/#blog"],
+  ["Find Us", "/#contact"],
+];
+
+const blogLinks = [
+  ["Bean Stories", "/#blog"],
+  ["Brew Tips", "/#blog"],
+  ["Cafe Life", "/#blog"],
+  ["Order Like a Pro", "/#blog"],
+];
+
+const shopLinks = [
+  ["Shop", "/shop"],
+  ["Cart", "/cart"],
+  ["Checkout", "/checkout"],
+];
+
+function NavDropdown({ label, links }) {
+  return (
+    <div className="group relative w-fit">
+      <button
+        type="button"
+        className="flex cursor-pointer items-center gap-1"
+        aria-haspopup="true"
+      >
+        {label}
+        <DropdownArrow />
+      </button>
+      <div
+        className="invisible absolute left-1/2 top-full z-50 w-52 -translate-x-1/2 translate-y-2 pt-4 opacity-0 transition-all duration-300 ease-in-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+      >
+        <div className="flex flex-col rounded-2xl bg-[#967259] p-2 text-white shadow-lg">
+          {links.map(([text, to]) => (
+            <Link
+              key={text}
+              to={to}
+              className="rounded-xl px-5 py-2 transition-colors hover:bg-white hover:text-[#967259]"
+            >
+              {text}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Header() {
   const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
-  const { pathname } = useLocation();
   const { totalItems } = useCart();
 
-  const isHome = pathname === "/";
-  const isShop = pathname.startsWith("/shop");
   return (
     <>
-      <header className="w-full bg-amber-950 sticky top-0 md:text-white z-99">
-        <div className="ml-auto mr-auto flex justify-between  items-center h-22 md:h-20 ">
+      <header className="sticky top-0 z-[99] w-full bg-amber-950 text-white">
+        <div className="relative mx-auto flex h-20 items-center justify-between md:h-20">
           <button
-            className="ml-5"
-            onClick={() => setMobileMenuStatus((prev) => !prev)}
+            type="button"
+            className="ml-5 rounded p-2 transition hover:bg-white/10 lg:hidden"
+            onClick={() => setMobileMenuStatus((previous) => !previous)}
+            aria-label={mobileMenuStatus ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileMenuStatus}
           >
             <HamburgerMenu />
           </button>
 
-          <div className="hidden md:flex gap-2 lg:gap-5 mr-5 lg:-ml-20 lg:mr-15 xl:gap-8">
-            <button className="cursor-pointer">Home</button>
-            <div className="relative group w-fit">
-              <button className="flex items-center gap-1 cursor-pointer">
-                Page
-                <DropdownArrow />
-              </button>
-              <PageDropDown />
-            </div>
-            <button className="cursor-pointer">Contact</button>
-            <button className="cursor-pointer">Team</button>
-          </div>
+          <nav className="ml-8 hidden items-center gap-5 lg:flex lg:gap-7">
+            <Link to="/" className="transition hover:text-amber-200">
+              Home
+            </Link>
+            <NavDropdown label="Page" links={pageLinks} />
+            <Link to="/#contact" className="transition hover:text-amber-200">
+              Contact
+            </Link>
+            <Link to="/#team" className="transition hover:text-amber-200">
+              Team
+            </Link>
+          </nav>
 
-          <div className=" ml-[37%] mr-auto flex justify-center pr-1 md:ml-0 md:mr-0">
+          <Link
+            to="/"
+            className="absolute left-1/2 flex -translate-x-1/2 items-center lg:static lg:translate-x-0"
+            aria-label="Brewnora home"
+          >
             <img
-              src="../src/assets/images/logo.png"
-              className="w-9 mt-0.5 md:w-10"
+              src="/src/assets/images/logo.png"
+              alt="Brewnora"
+              className="w-9 md:w-10"
             />
-          </div>
+          </Link>
 
-          <div className="hidden md:flex gap-2 lg:gap-5 ml-5 lg:ml-15 lg:-mr-20 xl:gap-8">
-            <div className="relative group w-fit">
-              <button className="flex items-center cursor-pointer">
-                Blog
-                <DropdownArrow />
-              </button>
-              <BlogDropDown />
-            </div>
-            <button className="cursor-pointer mr-1">Reviews</button>
-            <div className="relative group w-fit">
-              <button className="flex items-center cursor-pointer">
-                Shop
-                <DropdownArrow />
-              </button>
-              <ShopDropDown />
-            </div>
-            <button className="cursor-pointer">Account</button>
-          </div>
-          {isHome ? (
+          <nav className="mr-5 hidden items-center gap-5 lg:flex lg:gap-7">
+            <NavDropdown label="Blog" links={blogLinks} />
+            <Link to="/#reviews" className="transition hover:text-amber-200">
+              Reviews
+            </Link>
+            <NavDropdown label="Shop" links={shopLinks} />
             <Link
-              className="hidden md:flex bg-yellow-700 mr-5 text-white p-2 rounded-md cursor-pointer"
               to="/shop"
+              className="rounded-md bg-yellow-700 px-3 py-2 transition hover:bg-yellow-600"
             >
               Buy Now
             </Link>
-          ) : isShop ? (
-            <Link
-              to="/cart"
-              className="p-3 border border-white rounded-xl mt-1 mr-5 relative"
-            >
-              {totalItems > 0 && (
-                <span className="absolute -top-2 bg-amber-500 w-6 h-6 flex items-center justify-center rounded-full -right-2 text-amber-950">
-                  {totalItems}
-                </span>
-              )}
-              <BsCart2 className="text-white size-6" />
-            </Link>
-          ) : null}
+          </nav>
+
+          <Link
+            to="/cart"
+            aria-label={`Shopping cart${totalItems ? `, ${totalItems} items` : ""}`}
+            className="relative mr-5 rounded-xl border border-white p-3 transition hover:bg-white/10"
+          >
+            {totalItems > 0 && (
+              <span className="absolute -right-2 -top-2 flex h-6 min-w-6 items-center justify-center rounded-full bg-amber-500 px-1 text-sm text-amber-950">
+                {totalItems}
+              </span>
+            )}
+            <BsCart2 className="size-6" />
+          </Link>
         </div>
       </header>
 
@@ -89,84 +135,5 @@ export function Header() {
         setMobileMenuStatus={setMobileMenuStatus}
       />
     </>
-  );
-}
-
-export function PageDropDown() {
-  return (
-    <div
-      className="absolute -left-18 top-full z-50 w-50 pt-4
-        invisible opacity-0 translate-y-2
-        transition-all duration-300 ease-in-out
-        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-        group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
-    >
-      <div
-        className="flex flex-col rounded-2xl bg-[#967259] p-2 text-white shadow-sm shadow-[#967259]
-          [&_button]:cursor-pointer [&_button]:rounded-2xl [&_button]:border [&_button]:border-transparent
-          [&_button]:px-7 [&_button]:py-2 [&_button]:text-left
-          [&_button]:transition-colors [&_button]:duration-200
-          [&_button:hover]:border-dotted [&_button:hover]:border-[#967259]
-          [&_button:hover]:bg-white [&_button:hover]:text-[#967259]"
-      >
-        <button>Welcome</button>
-        <button>The Menu</button>
-        <button>Our Roots</button>
-        <button>Beans & Gear</button>
-        <button>Bean Stories</button>
-        <button>Find Us</button>
-      </div>
-    </div>
-  );
-}
-
-export function BlogDropDown() {
-  return (
-    <div
-      className="absolute -left-18 top-full z-50 w-50 pt-4
-        invisible opacity-0 translate-y-2
-        transition-all duration-300 ease-in-out
-        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-        group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
-    >
-      <div
-        className="flex flex-col rounded-2xl bg-[#967259] p-2 text-white shadow-sm shadow-[#967259]
-          [&_button]:cursor-pointer [&_button]:rounded-2xl [&_button]:border [&_button]:border-transparent
-          [&_button]:px-7 [&_button]:py-2 [&_button]:text-left
-          [&_button]:transition-colors [&_button]:duration-200
-          [&_button:hover]:border-dotted [&_button:hover]:border-[#967259]
-          [&_button:hover]:bg-white [&_button:hover]:text-[#967259]"
-      >
-        <button>Bean Stories</button>
-        <button>Brew Tips</button>
-        <button>Cafe Life</button>
-        <button>Order Like a Pro</button>
-      </div>
-    </div>
-  );
-}
-
-export function ShopDropDown() {
-  return (
-    <div
-      className="absolute -left-18 top-full z-50 w-50 pt-4
-        invisible opacity-0 translate-y-2
-        transition-all duration-300 ease-in-out
-        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-        group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
-    >
-      <div
-        className="flex flex-col rounded-2xl bg-[#967259] p-2 text-white shadow-sm shadow-[#967259]
-          [&_button]:cursor-pointer [&_button]:rounded-2xl [&_button]:border [&_button]:border-transparent
-          [&_button]:px-7 [&_button]:py-2 [&_button]:text-left
-          [&_button]:transition-colors [&_button]:duration-200
-          [&_button:hover]:border-dotted [&_button:hover]:border-[#967259]
-          [&_button:hover]:bg-white [&_button:hover]:text-[#967259]"
-      >
-        <button>Cart</button>
-        <button>Checkout</button>
-        <button>My Account</button>
-      </div>
-    </div>
   );
 }
